@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --primary-background: #0a2b1c;
+  --secondary-background: #fcfff2;
+  --third-background: #f8f8f8;
+
+  --primary-card-backgourd: #c1dbcf;
+  --secondary-card-backgourd: #f3fff9c9;
+
+  --primary-border-color: #c8dfd4;
+  --secondary-border-color: #e4e2e2;
+  --third-border-color: #c1dbcf;
+
+  --primary-button-bg: #06291b;
+  --secondary-button-bg: #bcf031;
+
+  --primary-text-color: #0a2b1c;
+  --secondary-text-color: #e5ff9e;
+  --small-text-color: #0f0f0f;
+  --m-small-text-color: #a4a4a4;
+  --x-small-text-color: #4f5055;
+
+  --primary-icon-color: #85b503;
+
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+.font-satoshi {
+  font-family: "Satoshi", sans-serif;
+}
+
+body {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Satoshi", sans-serif;
+}
+
+.button {
+  padding: 12px 18px;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 100;
+  border-radius: 8px;
+}
+
+.title {
+  width: fit-content;
+  padding: 6px 12px;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 100;
+  border-radius: 8px;
+  background: var(--primary-background);
+  color: var(--secondary-text-color);
+}
