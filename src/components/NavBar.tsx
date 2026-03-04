@@ -35,7 +35,7 @@ function NavBar() {
     }, []);
 
     return (
-        <div className={`w-full h-[auto] top-0 flex justify-between items-center z-100 xl:px-12 py-4
+        <div className={`w-full h-[auto] top-0 flex justify-between items-center z-100 px-6 md:px-8 xl:px-12 py-4
          ${scroll ? 'sticky bg-[rgba(0,0,0,.5)]' : 'absolute'}
         `}>
             <div className="logoContainer">

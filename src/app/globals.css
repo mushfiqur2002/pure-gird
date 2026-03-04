@@ -7,7 +7,7 @@
   --third-background: #f8f8f8;
 
   --primary-card-backgourd: #c1dbcf;
-  --secondary-card-backgourd: #f3fff9c9;
+  --secondary-card-backgourd: #f3fff9;
 
   --primary-border-color: #c8dfd4;
   --secondary-border-color: #e4e2e2;
@@ -19,7 +19,7 @@
   --primary-text-color: #0a2b1c;
   --secondary-text-color: #e5ff9e;
   --small-text-color: #0f0f0f;
-  --m-small-text-color: #a4a4a4;
+  --m-small-text-color: #5a5a5a;
   --x-small-text-color: #4f5055;
 
   --primary-icon-color: #85b503;
@@ -61,6 +61,19 @@ body {
   font-size: 14px;
   font-weight: 100;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+.card-button {
+  display: flex;
+  padding: 8px 14px;
+  text-transform: capitalize;
+  font-weight: 100;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
