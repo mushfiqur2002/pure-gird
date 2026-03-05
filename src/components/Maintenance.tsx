@@ -54,7 +54,7 @@ export default function Maintenance() {
 
             {/* 2nd step  */}
             <div className="w-full h-full bg-[var(--secondary-background)] md:pt-0 lg:pt-12 flex justify-center items-center relative flex-col lg:flex-row">
-                <div className="relative w-[400px] sm:w-[500px] md:w-[850px] xl:w-[900px] md:h-[600px] overflow-hidden z-10">
+                <div className="relative w-[400px] sm:w-[500px] md:w-[800px] xl:w-[900px] md:h-[600px] overflow-hidden z-10">
                     <Image
                         src={MainImage}
                         alt="main image fo maintenance"
@@ -64,7 +64,7 @@ export default function Maintenance() {
                     <Image
                         src={NameLogoImage}
                         alt="company 2nd logo"
-                        className="w-auto h-[42px] sm:h-[52px] md:h-[65px] xl:h-[70px] absolute right-30 sm:right-40 md:right-90 lg:right-100 xl:right-89 bottom-20 sm:bottom-25 md:bottom-30"
+                        className="w-auto h-[42px] sm:h-[52px] md:h-[65px] xl:h-[70px] absolute right-30 sm:right-40 md:right-90 lg:right-96 xl:right-90 bottom-20 sm:bottom-25 md:bottom-30"
                     />
                 </div>
 
@@ -72,7 +72,7 @@ export default function Maintenance() {
                     <Spiner />
                 </div>
 
-                <div className="relative md:absolute w-[90%] md:w-[365px] lg:w-[440px] xl:w-[500px] h-auto bg-white z-20 bottom-0 md:right-5 lg:right-12 border-1 border-[rgba(0,0,0,0.25)] rounded-2xl p-8 mx-6 gap-6 flex flex-col">
+                <div className="relative md:absolute w-[90%] md:w-[365px] lg:w-[440px] xl:w-[500px] h-auto bg-white z-20 bottom-0 md:right-5 lg:right-2 xl:right-12 border-1 border-[rgba(0,0,0,0.25)] rounded-2xl p-8 mx-6 gap-6 flex flex-col">
                     <div className="flex flex-col gap-4">
                         <h1 className="capitalize text-[24px] md:text-[30px] lg:text-[36px] xl:text-[42px] font-medium leading-8 sm:leading-10">The advantages of a PureGrid ecosystem</h1>
                         <p className="text-[14px] lg:text-[16px] xl:text-[18px] text-black/60">At PureGrid, we believe in the sun’s infinite potential to revolutionize how we power our lives.</p>

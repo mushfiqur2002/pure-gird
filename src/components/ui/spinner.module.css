@@ -80,7 +80,7 @@
   }
 }
 
-@media (max-width: 640px) {
+/* @media (min-width: 640px) {
   :root {
     --position: 90px;
   }
@@ -94,7 +94,7 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) {
   :root {
     --position: 80px;
   }
@@ -106,7 +106,7 @@
     width: 15px;
     height: 100px;
   }
-}
+} */
 
 /* *** ----------------- *** */
 /* *** pure grid loader *** */
