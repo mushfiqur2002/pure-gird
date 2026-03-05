@@ -59,7 +59,8 @@ export default function About() {
                 <div className="w-full px-4 sm:px-6 md:px-8 xl:px-12 pb-16 z-20">
                     <div className="w-full flex flex-wrap justify-center lg:justify-between items-center gap-6">
                         {cardLists.map((x) => (
-                            <div key={x.title} className="w-full md:w-[340px] lg:w-[300px] xl:w-[343.1px] h-[300px] sm:h-[345px] flex justify-between items-start flex-col bg-[var(--secondary-card-backgourd)] rounded-xl p-4 xl:p-6 border-1 border-[var(--third-border-color)]">
+                        
+                            <div key={x.title} className="w-full md:w-[340px] lg:w-[300px] xl:w-[343.1px] h-[300px] sm:h-[345px] flex justify-between items-start flex-col bg-[rgba(243,255,249,0.79)] rounded-xl p-4 xl:p-6 border-1 border-[var(--third-border-color)]">
                                 <div>
                                     <img src={x.icon} className="w-8 h-8 sm:w-10 sm:h-10" alt="icon" />
                                 </div>
