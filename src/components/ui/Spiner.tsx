@@ -1,8 +1,9 @@
+import StyleCSS from './spinner.module.css'
+
 export default function Spiner() {
     return (
         <div>
-            <div className="pure_grid_loader">
-                <div className="percent">75%</div>
+            <div className={StyleCSS.pure_grid_loader}>
                 <span></span>
                 <span></span>
                 <span></span>

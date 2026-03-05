@@ -25,3 +25,7 @@ export const maintanceList = [
     { title: 'Proactive Health Checks', paragraph: 'We conduct systematic performance audits to keep your output at 100% and resolve minor issues before they escalate.' },
     { title: 'Rapid Response Team', paragraph: 'Should an interruption occur, our technical specialists provide immediate onsite support to restore your power flow fast.' }
 ]
+
+export const advantagesList = [
+    'cost saving', 'eco-friendly', 'energy independence', 'low maintenance', 'increased property value'
+]
