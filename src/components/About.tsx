@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 export default function About() {
     return (
-        <div className="relative" id="about">
+        <div className="relative">
             {/* advance */}
             <div className="w-full h-[auto] flex flex-col md:flex-row justify-between items-center gap-8 md:gap-6 lg:gap-24 xl:gap-36 px-4 sm:px-6 md:px-8 xl:px-12 py-10">
                 {/* heading */}

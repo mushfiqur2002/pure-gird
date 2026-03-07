@@ -56,7 +56,6 @@ export default function Testimonials() {
     return (
         <motion.div
             className="w-full relative overflow-hidden px-4 sm:px-6 md:px-8 xl:px-12 py-10 flex flex-col gap-8"
-            id="testimonials"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}

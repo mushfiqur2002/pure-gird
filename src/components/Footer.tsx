@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <div className="w-full relative overflow-hidden px-4 sm:px-6 md:px-8 xl:px-12 pb-4 pt-10 flex flex-col gap-8 bg-[var(--primary-background)]" id="footer">
+        <div className="w-full relative overflow-hidden px-4 sm:px-6 md:px-8 xl:px-12 pb-4 pt-10 flex flex-col gap-8 bg-[var(--primary-background)]">
             <div>
                 <Image
                     src={FooterLogo}

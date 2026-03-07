@@ -13,7 +13,6 @@ import { motion } from "motion/react"
 export default function Maintenance() {
     return (
         <motion.div
-            id="maintenance"
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

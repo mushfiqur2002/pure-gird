@@ -24,15 +24,18 @@ function NavBar() {
     }, []);
 
     useEffect(() => {
-        const handleHashChange = () => {
-            setActive(window.location.hash);
-        };
+        const updateHash = () => setActive(window.location.hash)
 
-        handleHashChange();
-        window.addEventListener("hashchange", handleHashChange);
+        window.addEventListener("hashchange", updateHash)
+        window.addEventListener("click", updateHash)
 
-        return () => window.removeEventListener("hashchange", handleHashChange);
-    }, []);
+        updateHash()
+
+        return () => {
+            window.removeEventListener("hashchange", updateHash)
+            window.removeEventListener("click", updateHash)
+        }
+    }, [])
 
     return (
         <>

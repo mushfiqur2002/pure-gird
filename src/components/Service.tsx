@@ -12,7 +12,7 @@ export default function Service() {
         rotate: Math.random() * 40 - 20
     })
     return (
-        <div className="w-full px-4 sm:px-6 md:px-8 xl:px-12 py-10 flex flex-col gap-8" id="services">
+        <div className="w-full px-4 sm:px-6 md:px-8 xl:px-12 py-10 flex flex-col gap-8">
             {/* heading */}
             <div className="w-full flex flex-col justify-start items-start">
                 <Title title='Our Services' />
