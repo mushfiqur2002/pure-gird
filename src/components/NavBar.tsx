@@ -23,19 +23,32 @@ function NavBar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // Inside NavBar.tsx
     useEffect(() => {
-        const updateHash = () => setActive(window.location.hash)
+        // 1. Target all sections that have IDs matching your navLinks
+        const sections = document.querySelectorAll("section[id]");
 
-        window.addEventListener("hashchange", updateHash)
-        window.addEventListener("click", updateHash)
+        const observerOptions = {
+            root: null,
+            // Adjust rootMargin to trigger the change earlier/later. 
+            // "-20% 0px -70% 0px" usually works well for sticky navbars.
+            rootMargin: "-20% 0px -70% 0px",
+            threshold: 0,
+        };
 
-        updateHash()
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // This matches link.href (e.g., "#home")
+                    setActive(`#${entry.target.id}`);
+                }
+            });
+        }, observerOptions);
 
-        return () => {
-            window.removeEventListener("hashchange", updateHash)
-            window.removeEventListener("click", updateHash)
-        }
-    }, [])
+        sections.forEach((section) => observer.observe(section));
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <>

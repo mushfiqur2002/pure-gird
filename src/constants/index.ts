@@ -2,10 +2,10 @@ import { sign } from "crypto";
 import { title } from "process";
 
 export const navLinks = [
-    { name: "Home", href: "/" },
+    { name: "Home", href: "#home" },
     { name: "About Us", href: "#about" },
-    { name: "Services", href: "#services" },
     { name: "Maintenance", href: "#maintenance" },
+    { name: "Services", href: "#services" },
     { name: "Testimonials", href: "#testimonials" },
 ];
 
