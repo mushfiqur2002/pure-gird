@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -15,6 +15,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Pure Grid",
   description: "Pure Grid Website",
+  icons: {
+    icon: "/image/logo.png",
+    shortcut: "/image/logo.png",
+    apple: "/image/logo.png",
+  },
+  themeColor: '#0a2b1c'
 };
 
 export default function RootLayout({
