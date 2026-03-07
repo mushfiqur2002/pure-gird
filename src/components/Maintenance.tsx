@@ -53,39 +53,39 @@ export default function Maintenance() {
             </div>
 
             {/* 2nd step  */}
-            <div className="w-full h-full bg-[var(--secondary-background)] md:pt-0 lg:pt-12 flex justify-center items-center relative flex-col lg:flex-row">
-                <div className="relative w-[400px] sm:w-[500px] md:w-[800px] xl:w-[900px] md:h-[600px] overflow-hidden z-10">
+            <div className="w-full h-full bg-[var(--secondary-background)] pt-16 sm:pt-24 lg:pt-12 flex justify-center items-center relative flex-col lg:flex-row">
+                <div className="relative w-full h-[200px] sm:h-[300px] lg:h-[400px] xl:h-[500px] overflow-hidden z-10">
                     <Image
                         src={MainImage}
                         alt="main image fo maintenance"
-                        className="w-full h-full object-contain md:object-cover object-bottom lg:absolute -bottom-10"
+                        className="w-full h-full object-contain object-bottom relative lg:absolute sm:left-10 md:left-0 lg:-bottom-10"
                     />
 
                     <Image
                         src={NameLogoImage}
                         alt="company 2nd logo"
-                        className="w-auto h-[42px] sm:h-[52px] md:h-[65px] xl:h-[70px] absolute right-30 sm:right-40 md:right-90 lg:right-96 xl:right-90 bottom-20 sm:bottom-25 md:bottom-30"
+                        className="w-auto h-[36px] sm:h-[52px] lg:h-[50px] xl:h-[70px] hidden md:flex absolute md:left-50 lg:left-70 xl:left-80 bottom-10 sm:bottom-20 md:bottom-20 lg:bottom-15 xl:bottom-20"
                     />
                 </div>
 
-                <div className="absolute -top-2 sm:-top-10 lg:-top-6 xl:-top-14 -left-5 sm:left-0 lg:-left-4 xl:left-20 ">
+                <div className="absolute -top-10 sm:-top-10 lg:-top-16 sm:right-0 sm:left-0 lg:left-10 xl:left-25 ">
                     <Spiner />
                 </div>
 
-                <div className="relative md:absolute w-[90%] md:w-[365px] lg:w-[440px] xl:w-[500px] h-auto bg-white z-20 bottom-0 md:right-5 lg:right-2 xl:right-12 border-1 border-[rgba(0,0,0,0.25)] rounded-2xl p-8 mx-6 gap-6 flex flex-col">
+                <div className="relative lg:absolute w-[90%] lg:w-[440px] xl:w-[500px] h-auto bg-white z-20 bottom-0 md:right-0 lg:right-2 xl:right-12 border-1 border-[rgba(0,0,0,0.25)] rounded-2xl p-6 md:p-8 mx-6 gap-6 flex flex-col">
                     <div className="flex flex-col gap-4">
-                        <h1 className="capitalize text-[24px] md:text-[30px] lg:text-[36px] xl:text-[42px] font-medium leading-8 sm:leading-10">The advantages of a PureGrid ecosystem</h1>
-                        <p className="text-[14px] lg:text-[16px] xl:text-[18px] text-black/60">At PureGrid, we believe in the sun’s infinite potential to revolutionize how we power our lives.</p>
+                        <h1 className="capitalize text-[22px] sm:text-[24px] md:text-[28px] lg:text-[36px] xl:text-[42px] font-medium leading-6 sm:leading-10">The advantages of a PureGrid ecosystem</h1>
+                        <p className="text-[12px] sm:text-[14px] lg:text-[16px] xl:text-[18px] text-black/60">At PureGrid, we believe in the sun’s infinite potential to revolutionize how we power our lives.</p>
                     </div>
                     <div>
-                        <ul className="flex flex-col gap-4">
+                        <ul className="flex flex-wrap lg:flex-col gap-4">
                             {
                                 advantagesList.map((x, index) => (
-                                    <li key={index} className="flex justify-start items-center gap-4">
+                                    <li key={index} className="flex justify-start items-center gap-2">
                                         <span className="w-4 h-4 bg-[var(--primary-icon-color)] flex justify-center items-center rounded-full">
                                             <Check color="white" size={12} />
                                         </span>
-                                        <p className="capitalize text-[14px] md:text-[16px] lg:text-[18px] font-medium">{x}</p>
+                                        <p className="capitalize text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-medium">{x}</p>
                                     </li>
                                 ))
                             }

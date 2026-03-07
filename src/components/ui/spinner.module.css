@@ -80,21 +80,21 @@
   }
 }
 
-/* @media (min-width: 640px) {
+@media (320px <= width < 640px) {
   :root {
-    --position: 90px;
+    --position: 60px;
   }
   .pure_grid_loader {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
   }
   .pure_grid_loader span {
-    width: 20px;
-    height: 120px;
+    width: 15px;
+    height: 80px;
   }
 }
 
-@media (min-width: 320px) {
+/* @media (min-width: 320px) {
   :root {
     --position: 80px;
   }

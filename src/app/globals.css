@@ -5,6 +5,8 @@
   --primary-background: #0a2b1c;
   --secondary-background: #fcfff2;
   --third-background: #f8f8f8;
+  --forth-background: #dbe3aa;
+  --fifth-background: ;
 
   --primary-card-backgourd: #c1dbcf;
   --secondary-card-backgourd: #f3fff9;
@@ -12,6 +14,7 @@
   --primary-border-color: #c8dfd4;
   --secondary-border-color: #e4e2e2;
   --third-border-color: #c1dbcf;
+  --forth-border-color: #f8f8f8;
 
   --primary-button-bg: #06291b;
   --secondary-button-bg: #bcf031;
@@ -21,6 +24,8 @@
   --small-text-color: #0f0f0f;
   --m-small-text-color: #5a5a5a;
   --x-small-text-color: #4f5055;
+  --xx-small-text-color: #59595d;
+  --xxx-small-text-color: #a4a4a4;
 
   --primary-icon-color: #85b503;
 
@@ -93,4 +98,55 @@ body {
   border-radius: 8px;
   background: var(--primary-background);
   color: var(--secondary-text-color);
+}
+
+.gradient-backgroud {
+  background: linear-gradient(
+    70deg,
+    rgba(221, 221, 221, 1) 0%,
+    rgba(255, 255, 255, 1) 32%,
+    rgba(255, 255, 255, 1) 62%,
+    rgba(221, 221, 221, 1) 100%
+  );
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  25% {
+    transform: translate(30px, -40px) scale(1.02);
+  }
+  50% {
+    transform: translate(-20px, -60px) scale(0.98);
+  }
+  75% {
+    transform: translate(-40px, -20px) scale(1.01);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-50px, -30px) scale(0.99);
+  }
+  66% {
+    transform: translate(40px, -50px) scale(1.02);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-float {
+  animation: float 18s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 22s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
