@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navLinks } from "@/constants";
 import { LucideMenu, X } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
 function NavBar() {
     const [scroll, setScroll] = useState(false);
@@ -36,7 +37,11 @@ function NavBar() {
     return (
         <>
             {/* Navbar */}
-            <div
+
+            <motion.div
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 className={`w-full flex justify-between items-center z-40 px-4 sm:px-6 md:px-8 xl:px-12 py-4
         ${scroll ? "sticky top-0 bg-black/50 backdrop-blur-md" : "absolute"}
         `}
@@ -83,54 +88,92 @@ function NavBar() {
                     </button>
 
                     {/* Mobile Menu Button */}
-                    <button
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.9 }}
                         className="lg:hidden text-white bg-white/20 border border-white/40 backdrop-blur-md p-2 rounded-full"
                         onClick={() => setMenuOpen(true)}
                     >
                         <LucideMenu className="w-3 h-3 sm:w-4 sm:h-4" />
-                    </button>
+                    </motion.button>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Mobile Menu */}
-            {menuOpen && (
-                <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center lg:hidden">
-
-                    {/* Close Button */}
-                    <button
-                        onClick={() => setMenuOpen(false)}
-                        className="absolute top-6 right-6 text-white bg-[rgba(255,255,255,.1)] bg-blur-xs p-2 rounded-full border-1 border-[rgba(255,255,255,.2)]"
+            <AnimatePresence>
+                {menuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center lg:hidden"
                     >
-                        <X size={20} />
-                    </button>
 
-                    {/* Mobile Links */}
-                    <ul className="flex flex-col gap-6 text-center">
-                        {navLinks.map((link) => {
-                            const isActive = active === link.href;
+                        {/* Close Button */}
+                        <motion.button
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0 }}
+                            transition={{ duration: 0.3 }}
+                            onClick={() => setMenuOpen(false)}
+                            className="absolute top-6 right-6 text-white bg-[rgba(255,255,255,.1)] bg-blur-xs p-2 rounded-full border-1 border-[rgba(255,255,255,.2)]"
+                        >
+                            <X size={20} />
+                        </motion.button>
 
-                            return (
-                                <li key={link.href}>
-                                    <Link
-                                        href={link.href}
-                                        onClick={() => setMenuOpen(false)}
-                                        className={`text-md px-6 py-2 rounded-full transition ${isActive
-                                            ? "bg-white text-black"
-                                            : "text-white hover:bg-white/20"
-                                            }`}
+                        {/* Mobile Links */}
+                        <motion.ul
+                            initial="hidden"
+                            animate="show"
+                            exit="hidden"
+                            variants={{
+                                hidden: { opacity: 0 },
+                                show: {
+                                    opacity: 1,
+                                    transition: { staggerChildren: 0.1 }
+                                }
+                            }}
+                            className="flex flex-col gap-6 text-center"
+                        >
+                            {navLinks.map((link) => {
+                                const isActive = active === link.href;
+
+                                return (
+                                    <motion.li
+                                        key={link.href}
+                                        variants={{
+                                            hidden: { opacity: 0, y: 20 },
+                                            show: { opacity: 1, y: 0 }
+                                        }}
                                     >
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
+                                        <Link
+                                            href={link.href}
+                                            onClick={() => setMenuOpen(false)}
+                                            className={`text-md px-6 py-2 rounded-full transition ${isActive
+                                                ? "bg-white text-black"
+                                                : "text-white hover:bg-white/20"
+                                                }`}
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    </motion.li>
+                                );
+                            })}
+                        </motion.ul>
 
-                    <button className="mt-8 bg-white text-black button">
-                        Book Appointment
-                    </button>
-                </div>
-            )}
+                        <motion.button
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4 }}
+                            className="mt-8 bg-white text-black button"
+                        >
+                            Book Appointment
+                        </motion.button>
+
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     );
 }

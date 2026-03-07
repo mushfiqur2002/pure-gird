@@ -1,10 +1,12 @@
 "use client"
 import { advancedLists, cardLists } from "@/constants";
 import SideImage from "../../public/image/about-side-image.png"
-import CardBgImage from "../../public/image/about-bg-image.jpg"
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Title from "./ui/Titel";
+import Counter from "./element/Counter";
+import Odometer from "./element/Odometer";
+import { motion, AnimatePresence } from "motion/react";
 
 export default function About() {
     return (
@@ -22,7 +24,10 @@ export default function About() {
                             advancedLists.map((x) => (
                                 <li key={x.title} className="w-full md:w-auto flex justify-between md:justify-center items-center md:gap-2 lg:gap-4">
                                     <p className="text-[14px] md:text-[16px] font-thin text-[var(--x-small-text-color)] pr-30 sm:pr-48 md:pr-0">{x.title}</p>
-                                    <p className="text-[30px] sm:text-[36px] md:text-[42px] lg:text-[48px] xl:text-[52px] font-medium text-[var(--primary-text-color)]">{x.text}</p>
+                                    <p className="w-full text-end text-[30px] sm:text-[36px] md:text-[42px] lg:text-[48px] xl:text-[52px] font-medium text-[var(--primary-text-color)]">
+                                        <Counter value={x.number} />{x.suffix}
+                                        {/* <Odometer value={x.number} />{x.suffix} */}
+                                    </p>
                                 </li>
                             ))
                         }
@@ -31,7 +36,13 @@ export default function About() {
             </div>
 
             {/* 2nd section  */}
-            <div className="w-full h-full flex flex-col bg-[url(../../public/image/about-bg-image.jpg)] bg-bottom bg-cover relative">
+
+            <motion.div
+                initial={{ opacity: 0, y: 80 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: false }}
+                className="w-full h-full flex flex-col bg-[url(../../public/image/about-bg-image.jpg)] bg-bottom bg-cover relative">
                 {/* layer  */}
                 <div className="w-full h-full bg-[rgba(255,255,255,.5)] absolute top-0 z-10"></div>
 
@@ -57,10 +68,32 @@ export default function About() {
 
                 {/* card section */}
                 <div className="w-full px-4 sm:px-6 md:px-8 xl:px-12 pb-16 z-20">
-                    <div className="w-full flex flex-wrap justify-center lg:justify-between items-center gap-6">
+                    <motion.div
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.3 }}
+                        variants={{
+                            hidden: {},
+                            show: {
+                                transition: {
+                                    staggerChildren: 0.28
+                                }
+                            }
+                        }}
+                        className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {cardLists.map((x) => (
-                        
-                            <div key={x.title} className="w-full md:w-[340px] lg:w-[300px] xl:w-[343.1px] h-[300px] sm:h-[345px] flex justify-between items-start flex-col bg-[rgba(243,255,249,0.79)] rounded-xl p-4 xl:p-6 border-1 border-[var(--third-border-color)]">
+                            <motion.div
+                                key={x.title}
+                                variants={{
+                                    hidden: { opacity: 0, y: 80, scale: 0.95 },
+                                    show: { opacity: 1, y: 0, scale: 1 }
+                                }}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 120,
+                                    damping: 18
+                                }}
+                                className="w-full h-[300px] flex justify-between items-start flex-col bg-[rgba(243,255,249,0.79)] rounded-xl p-4 xl:p-6 border-1 border-[var(--third-border-color)]">
                                 <div>
                                     <img src={x.icon} className="w-8 h-8 sm:w-10 sm:h-10" alt="icon" />
                                 </div>
@@ -74,11 +107,11 @@ export default function About() {
                                         </button>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
-            </div>
-        </div>
+            </motion.div>
+        </div >
     )
 }

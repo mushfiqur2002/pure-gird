@@ -1,3 +1,4 @@
+import { sign } from "crypto";
 import { title } from "process";
 
 export const navLinks = [
@@ -9,9 +10,9 @@ export const navLinks = [
 ];
 
 export const advancedLists = [
-    { title: "Average Reduction in Energy Costs", text: "80%" },
-    { title: "Years of System Lifespan", text: "22+" },
-    { title: "Return on Investment (ROI)", text: "76%" },
+    { title: "Average Reduction in Energy Costs", number: 80, suffix: "%" },
+    { title: "Years of System Lifespan", number: 22, suffix: "+" },
+    { title: "Return on Investment (ROI)", number: 76, suffix: "%" },
 ];
 
 export const cardLists = [
