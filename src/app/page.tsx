@@ -6,7 +6,8 @@ import NavBar from "@/components/NavBar";
 import Service from "@/components/Service";
 import Testimonials from "@/components/Testimonials";
 
-export default function Home() {
+export default async function Home() {
+  await new Promise((resolve) => setTimeout(resolve, 3000))
   return (
     <div className="relative">
       <NavBar />
